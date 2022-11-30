@@ -1,0 +1,10 @@
+extends shared/app_layout.pug
+
+block content
+
+        div#app
+        script
+                :babel
+                    var mountComponent = document.querySelector('#app');
+                    ReactDOM.render(<AppHeader/>, mountComponent);
+

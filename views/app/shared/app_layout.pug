@@ -1,0 +1,33 @@
+
+doctype html
+html
+   head
+      title= title
+      link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+      link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css')
+      link(rel="stylesheet", href='/css/reset.css')
+      link(rel='stylesheet', href='/css/app.css')
+      include ../../favicon
+      script(src="../js/jquery.js")
+      //script(src="../js/require.js")
+      script(src="../js/common.js")
+      script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js")
+      script(src="https://unpkg.com/react@16/umd/react.development.js")
+      script(src="https://unpkg.com/react-dom@16/umd/react-dom.development.js")
+      script(src="https://unpkg.com/@material-ui/core/umd/material-ui.production.min.js", crossorigin="anonymous")
+      script(src="../js/socket.io.js")
+      //script(src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js")
+      script.
+         //Copy the page context into js globals, for use in included js files
+         Bib.Global.AccessToken = "#{context.user.access_token}";
+      script(src="../js/system.js")
+      script(src="../js/app.js")
+      //script(type="text/babel", src="../jsx/react.main.jsx")
+   body
+      include header
+      section.content
+         div#content.content
+            block content
+      include footer
+
+

@@ -1,0 +1,93 @@
+extends shared/app_layout
+
+block content
+    h1 My Tasks
+    .task_list
+        input(id='new_task',type='submit',class='left',value='New Task')
+
+        if(tasks)
+            each task in tasks
+                .task_list_panel
+                    -var hasRevisions = task.revisions.length != 0
+                    div.task_tag(class=hasRevisions ? "" : "waiting")
+                        p=(hasRevisions ? task.revisions.length : "")
+                        div(class=hasRevisions ? "" : "fa fa-circle-o-notch fa-spin")
+                    p=task.content
+                    p.date=moment(task.created_at).fromNow()
+                    if(hasRevisions)
+                    .task_revisions
+                        each revision in task.revisions
+                            .task_revision
+                                img(class="user_avatar small",src=revision.user.avatar)
+                                p.date=revision.user.username
+                                p=revision.content
+
+        //Page Navigation
+        nav
+            ul(class="pager")
+                if(pagination && pagination.page > 1)
+                    -var prevPage = pagination.page-1;
+                    li(class="previous")
+                        a(href="tasks?p=#{prevPage}")
+                            span(aria-hidden="true") &larr;
+                            | &nbsp; Newer
+                if(pagination && pagination.pages > pagination.page)
+                    -var nextPage = pagination.page+1;
+                    li(class="next")
+                        a(href="tasks?p=#{nextPage}")
+                            | Older &nbsp;
+                            span(aria-hidden="true") &rarr;
+
+    //Section for entering a new task
+    .task_detail
+        form(action='./tasks',method='post')
+            div.error(class=_.isUndefined(message) ? "hidden" : "")
+                !=message
+            ul.form_list
+                li
+                    textarea(id='content',maxlength=300,rows=2,placeholder='Enter New Task Text...',name='content')
+                li
+                    label
+                    div(id='text_stats').small.right 0/300 [0]
+                li
+                    label Pro Edit
+                    input(id='pro_review', type='checkbox', name='pro_review', checked=user.notifications, disabled=user.kudos === 0)
+                    p.form_item_descriptor Allow edit by an Approved Professional Editor only (<a href="faq#kudos" target="help">Kudos</a> required).
+
+            input(id='_csrf',type='hidden',value=_csrf,name='_csrf')
+
+            //Bootstrap split button for submit
+            .btn-group
+                button(type="submit",class="btn btn-danger")
+                    i.fa.fa-sign-out.fa-fw
+                    | Submit Task
+                button(type="button",class="btn btn-danger dropdown-toggle",data-toggle="dropdown",aria-haspopup="true",aria-expanded="false")
+                    span.caret
+                    span.sr-only Toggle Dropdown
+                ul.dropdown-menu
+                    li
+                        div
+                            p.small.center Pick Task Purpose
+                            a(href="#",class="right fa fa-question-circle fa-lg")
+                    li(role="separator",class="divider")
+                    li
+                        a(href="#")
+                            i(class="fa fa-check-circle fa-fw")
+                            | Standard Copyedit
+                    li
+                        a(href="#")
+                            i(class="fa fa-circle-thin fa-fw")
+                            | Say It Better
+                    li
+                        a(href="#")
+                            i(class="fa fa-circle-thin fa-fw")
+                            | Safe to Publish?
+
+
+            nav
+            ul(class="pager")
+                li(class="previous")
+                    a(href="tasks")
+                        span(aria-hidden="true") &larr;
+                        | &nbsp; Tasks
+

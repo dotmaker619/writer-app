@@ -1,0 +1,89 @@
+extends shared/app_layout.pug
+
+block content
+
+        if _.includes(user.roles, 'admin')
+                h1 Administrator Content
+        else
+                if _.includes(user.roles, 'editor')
+                        h1 Editor's Landing Page Content
+
+                if _.includes(user.roles, 'writer')
+                        h1 Writer's Landing Page Content
+
+        script
+                :babel
+                        SystemJS.import('@material-ui/core/Snackbar').then(function(Module) {
+                                                        var SnackBar = Module.SnackBar;
+                                                        ReactDOM.render(
+                                                                                          <Snackbar
+                                                                                                    anchorOrigin={{ vertical, horizontal }}
+                                                                                                    open={open}
+                                                                                                    onClose={this.handleClose}
+                                                                                                    ContentProps={{
+                                                                                                      'aria-describedby': 'message-id',
+                                                                                                    }}
+                                                                                                    message={<span id="message-id">I love snacks</span>}
+                                                                                                  />,
+                                                                                          document.getElementById('content')
+                                                                                        );
+                                          });
+                        /*
+                        SystemJS.import('/jsx/react.main.jsx').then(function(Module) {
+                                console.log(Module); // yay
+                                var Hello = Module.Hello;
+                                ReactDOM.render(
+                                                                  <Hello message="Brendan"/>,
+                                                                  //element,
+                                                                  document.getElementById('content')
+                                                                );
+                        });
+                        */
+
+                        //console.log('Hello World !!!');
+                        //import React from 'react';
+                        //import ReactDOM from 'react-dom';
+                        //require(['react-dom'], function (reactDOM) {
+                                //const element = <h1>Hello, world</h1>;
+                        //        import { Hello } from 'react.main';
+
+                        //});
+                        //var ReactDOM = require('react-dom');
+
+                        /*
+                        SystemJS.import('/jsx/react.tinymce.jsx').then(function(Module) {
+                                                        var Editor = Module.TinyMCE;
+                                                        ReactDOM.render(
+                                                                <Editor config={{
+                                                                                height: 500,
+                                                                                statusbar: false
+                                                                            }}
+                                                                            content={`<p>Enter some task text...</p>`}
+                                                                            onContentChanged={content => console.log(content)}
+                                                                            />,
+                                                                document.getElementById('content')
+                                                        );
+                        });
+                        */
+                        /*
+                        import { Editor } from '@tinymce/tinymce-react';
+                        ReactDOM.render(
+                                <Editor/>,
+                                document.getElementById('content')
+                        );
+                        */
+
+                        /*
+
+                        class Person {
+                           constructor(name) {
+                              this.name = name;
+                           }
+
+                           sayName() {
+                              console.log(`Hello, my name is ${this.name}`);
+                           }
+                        }
+                        var pers = new Person('Apoxx');
+                        pers.sayName();
+                        */

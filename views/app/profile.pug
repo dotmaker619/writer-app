@@ -1,0 +1,42 @@
+extends shared/app_layout
+
+block content
+    h1 My Profile
+    .profile_detail
+        form(action='./profile',method='post')
+                div.error(class=_.isUndefined(message) ? "hidden" : "")
+                    !=message
+                ul.form_list
+                    li
+                        label Email Address
+                        input(id='email',type='text',value=user.email,placeholder='Email Address',maxlength=254, name='email', autofocus)
+                        p.form_item_descriptor Never shown on your public profile. For login, password reset, and notifications only.
+                    li
+                        label Name
+                        div
+                            input(id='firstname',type='text',value=user.firstname,placeholder='First Name',maxlength=150,name='firstname',style='width:20%')
+                            input(id='lastname',type='text',value=user.lastname,placeholder='Last Name',maxlength=150,name='lastname',style='width:20%')
+                        p.form_item_descriptor Never shown on your public profile.
+                    li
+                        label Display Name
+                        input(id='username',type='text',value=user.username,placeholder='Username',maxlength=150,name='username')
+                        p.form_item_descriptor How your name will be displayed to other members on your public profile.
+                    li
+                        label(for='editor') I'm an Editor
+                        input(id='editor', type='checkbox', name='editor', checked=user.editor)
+                    li
+                        label(for='writer') I'm a Writer
+                        input(id='writer', type='checkbox', name='writer', checked=user.writer)
+                    li
+                        p.form_item_descriptor Select Editor to edit others work; Writer to post your own editing tasks.
+                    li
+                        label(for='notification') Enable Notifications
+                        input(id='notifications', type='checkbox', name='notifications', checked=user.notifications)
+                        p.form_item_descriptor Receive a notification pop-up as soon as new tasks and edits arrive. <br/>(This requires the Biblatio App or a modern web browser with notification permission.)
+
+                input(id='_csrf',type='hidden',value=_csrf,name='_csrf')
+                input(type='submit',class='right',value='Save Profile')
+    .profile_avatar
+        img(src="#{context.user.avatar_hash}",width=128,height=128)
+        p.small No Profile Picture?
+        a(href="http://www.gravatar.com",class="small") Set your Gravatar Image.

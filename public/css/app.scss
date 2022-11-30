@@ -1,0 +1,551 @@
+@import "common";
+
+/*  General CSS*/
+body
+{
+    background: $color_light_grey ;
+    text-rendering: optimizelegibility ;
+    text-align: center ;
+    -webkit-font-smoothing: antialiased ;
+    -moz-osx-font-smoothing: grayscale ;
+    margin: 0 !important ;
+    padding: 0 !important ;
+    font-family: "raleway-regular", arial ;
+    font-size: $font_size_normal ;
+}
+
+a
+{
+  color: $color_link ;
+  text-decoration: none ;
+}
+
+.form_item_descriptor
+{
+  clear: left ;
+  display: block ;
+  font-size: $font_size_small ;
+  color: $color_mid_dark_grey ;
+  margin-top: $spacing_small ;
+  margin-bottom: $spacing ;
+  padding-left: 25% ;
+}
+
+.error
+{
+  display: table ;
+  float: left ;
+  margin-left: $spacing_small;
+  margin-right: $spacing_small;
+  margin-bottom: $spacing ;
+  background-color: $color_trans_red ;
+  border-radius: $corner_radius ;
+  width: 90% ;
+  color: $color_trans_dark_red ;
+  text-align: center ;
+  //margin: $spacing auto ;
+  padding: $spacing;
+  font-size: 0.8em ;
+}
+
+.hidden
+{
+  visibility: hidden ;
+}
+
+a:hover
+{
+  text-decoration: underline;
+}
+
+/* Form Controls */
+
+/*
+input
+{
+  display: inline-block ;
+  font-family: "raleway-regular", arial ;
+  padding: $spacing_small $spacing $spacing_small $spacing ;
+  border: 1px solid $color_mid_grey ;
+}
+
+input[type="text"], input[type="password"]{
+  font-size: 1em ;
+  background-color: #fff ;
+  border-radius: $button_radius ;
+  width: 65% ;
+}
+
+ */
+
+input[type="checkbox"]{
+  border: none ;
+  padding: 0 ;
+  height: $control_height ;
+  line-height: $control_height ;
+}
+
+input[type="submit"]{
+  border: none ;
+  background-color: $color_mid_green ;
+  text-decoration: none ;
+  letter-spacing: 0.04em ;
+  font-size: $font_size_normal ;
+  font-weight: bold ;
+  text-align: center ;
+  min-width: 180px ;
+  height: $button_height ;
+  vertical-align: middle ;
+  border-radius: $button_radius ;
+  cursor: pointer ;
+  color: $color_white ;
+  text-shadow: 0 1px 0 $color_dark_green ;
+  padding: $spacing_small $spacing ;
+  margin-right: 6% ;
+  margin-top: $spacing ;
+  margin-bottom: $spacing ;
+}
+
+/*
+textarea
+{
+  min-height: $control_height * 2 ;
+  width: 100% ;
+  border-radius: $button_radius ;
+  resize: none ;
+  font-size: $font_size_normal ;
+  font-family: "raleway-regular", arial ;
+  padding: $spacing_small $spacing $spacing_small $spacing ;
+}
+
+ */
+
+.left
+{
+  float: left ;
+}
+
+.right
+{
+  float: right ;
+}
+
+/*
+input[type="submit"]:hover{
+  background-color: $color_light_green ;
+}
+
+input[type="text"]:focus, input[type="password"]:focus
+{
+  -webkit-box-shadow: inset 0px 1px 1px 0px rgba(0,0,0,0.3) ;
+  -moz-box-shadow: inset 0px 1px 1px 0px rgba(0,0,0,0.3) ;
+  box-shadow: inset 0px 1px 1px 0px rgba(0,0,0,0.3) ;
+  border: 1px solid $color_link ;
+}
+
+label
+{
+  line-height: normal ;
+}
+
+ */
+
+header
+{
+  border-radius: 0 0 $corner_radius $corner_radius ;
+  box-shadow: 1px 1px 2px 1px rgba(100,100,75,0.1) ;
+  background-color: $color_cream ;
+  border-bottom: 1px solid $color_dark_cream ;
+  border-left: 1px solid $color_dark_cream ;
+  border-right: 1px solid $color_dark_cream ;
+  height:  $header_height ;
+  margin-bottom: $spacing ;
+  max-width: $page_width ;
+  width: 100% ;
+  margin: 0 auto ;
+  position: fixed ;
+  top: 0 ;
+  left: 0 ;
+  right: 0 ;
+}
+
+header nav
+{
+  margin-top: 0 ;
+  height: 100% ;
+  display: block ;
+}
+
+header nav a:hover
+{
+  text-decoration: none ;
+}
+
+header nav .menu-nav
+{
+  float:left ;
+}
+
+header nav .logo
+{
+  background-image:url('../img/logo.png')  ;
+  background-repeat: no-repeat ;
+  background-position: center ;
+  display:block ;
+  height:$header_height ;
+  width:35px ;
+  text-indent:-9999px;
+}
+
+header nav .user-nav
+{
+  float:right ;
+  line-height: $header_height ;
+}
+
+header nav ul
+{
+  margin: 0 auto ;
+  height: auto ;
+  padding: 0 ;
+  vertical-align: middle ;
+}
+
+header nav ul li
+{
+  list-style: none ;
+  display: block ;
+  float: left ;
+  position: relative;
+}
+
+header nav ul li a
+{
+  color: $color_dark_grey ;
+  display: block ;
+  text-decoration: none ;
+  font-family: "raleway-regular" ;
+  font-size: $font_size_normal ;
+  line-height: $header_height ;
+  //vertical-align: middle ;
+  padding: 0 $spacing ;
+  //transition:all .2s linear ;
+  //padding: 0.6em 1.1em 0.6em 1.1em ;
+  //-webkit-transition:all .2s linear ;
+  //-moz-transition:all .2s linear ;
+  //-o-transition:all .2s linear ;
+}
+
+header nav ul li a:not(.active):hover
+{
+  background-color: $color_mid_cream ;
+}
+
+header nav ul li .active
+{
+  background-color: $color_dark_cream ;
+}
+
+header .user
+{
+  margin-left: 10px ;
+  padding-right: 9px ;
+  position: relative ;
+}
+
+header .user.over
+{
+  background-color: #fff ;
+}
+
+header .user img
+{
+  float: left ;
+  margin: $spacing 0 $spacing  $spacing ;
+}
+
+/* Form Panel */
+.form_panel
+{
+  background-color: $color_white;
+  text-align: center ;
+  box-shadow: 2px 2px 3px 1px rgba(0,0,0,0.1);
+  width: 325px ;
+  margin: 0 auto ;
+  margin-top: 20% ;
+  display: table ;
+  padding-bottom: $spacing ;
+  border-radius: $corner_radius ;
+}
+
+.form_panel header
+{
+  width: 100% ;
+  position: relative ;
+  height: $header_height ;
+  border-radius: $corner_radius $corner_radius 0 0 ;
+  background-color: $color_mid_cream ;
+  margin-bottom: $spacing ;
+  text-align: center ;
+  border-left: none ;
+  border-right: none ;
+  border-bottom: 1px solid $color_dark_cream ;
+  box-shadow: none ;
+}
+
+.form_panel header img
+{
+  float: left ;
+  margin: 8px 0 $spacing $spacing ;
+}
+
+.form_panel .fa
+{
+  background-color: $color_light_grey ;
+  background-position: center ;
+  border-left: 1px solid $color_mid_grey ;
+  border-top: 1px solid $color_mid_grey ;
+  border-bottom: 1px solid $color_mid_grey ;
+  width: 30px ;
+  height: 28px ;
+  vertical-align: middle ;
+  line-height: 30px ;
+  text-align: center ;
+  margin-top: -4px ;
+}
+
+.form_panel .hgap
+{
+  margin-right: 15px ;
+}
+
+.form_panel footer
+{
+  padding: 0px ;
+  width: 80% ;
+}
+
+/*
+.form_panel .error
+{
+  display: table ;
+  font-family: "raleway-regular", arial ;
+  background-color: $color_trans_red ;
+  border: 1px solid $color_trans_dark_red ;
+  border-radius: $corner_radius ;
+  width: 250px ;
+  color: #ffffff ;
+  text-align: center ;
+  margin: $spacing auto ;
+  padding: $spacing;
+  font-size: 0.8em ;
+}
+*/
+
+
+section.content
+{
+  height:100% ;
+  width:100% ;
+  display: block ;
+  min-height:80vh !important ;
+  max-width: $page_width ;
+  margin: 0 auto ;
+  margin-top: $header_height + $spacing ;
+  margin-bottom:36px ;
+  text-align: left ;
+}
+
+div.content
+{
+  margin: 0 auto ;
+  display: inline-block ;
+  width: 98% ;
+  max-width: $page_width ;
+  padding-left: $spacing ;
+}
+
+footer
+{
+  display: block ;
+  max-width: $page_width ;
+  margin: 0 auto ;
+  left: 0 ;
+  right: 0 ;
+  color: $color_mid_grey ;
+}
+
+footer p
+{
+  font-size: $font_size_small;
+}
+
+footer .rights
+{
+  float: left ;
+}
+
+footer .links
+{
+  float: right ;
+}
+
+footer a, footer a:visited
+{
+  color: $color_mid_grey ;
+}
+
+footer a:hover
+{
+  color: $color_dark_grey ;
+}
+
+.menu
+{
+  float: left ;
+  width: 174px ;
+  position: absolute ;
+  background-color:#cfcfcf ;
+  height:100% ;
+  min-height: 100% !important ;
+}
+
+.user_sub_menu
+{
+  background: none repeat scroll 0 0 #fff ;
+  border-bottom-left-radius: 3px ;
+  border-bottom-right-radius: 3px ;
+  box-shadow: 1px 1px 2px 1px rgba(100,100,75,0.1) ;
+  display: none ;
+  position: absolute ;
+  right: 0 ;
+  top: $header_height ;
+  width: 220px ;
+}
+
+.user_sub_menu li
+{
+  text-align: left ;
+  float: none ;
+  width: 100% ;
+}
+
+.user_sub_menu li a:hover
+{
+  background-color: $color_mid_cream;
+  color: $color_brown;
+}
+
+header img.user_avatar.small
+{
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.3) ;
+}
+
+img.user_avatar.small
+{
+  border-radius: 50% ;
+  height: 32px ;
+  width: 32px ;
+}
+
+h1
+{
+  font-family: 'raleway-bold' ;
+  font-size: $font_size_large ;
+  margin-top: $spacing ;
+  margin-bottom: $spacing ;
+}
+
+.content .profile_detail
+{
+  width: 75% ;
+  float:left ;
+}
+
+.content .task_detail
+{
+  width: 100% ;
+  float:left ;
+}
+
+.form_list
+{
+  margin: 0 ;
+  padding: 0 ;
+}
+
+.form_list li
+{
+  list-style: outside none none ;
+  padding-left: $spacing_small ;
+}
+
+.form_list label
+{
+    display: block ;
+    float: left ;
+    line-height: $control_height ;
+    padding: $spacing_small 0 ;
+    width: 25% ;
+    clear: left ;
+}
+
+.content .profile_avatar
+{
+  float:right ;
+  font-size: $font_size_small ;
+  text-align: center ;
+  padding: 0;
+}
+
+.content .profile_avatar p
+{
+  margin-top: $spacing_small;
+  margin-bottom: $spacing_small;
+}
+
+.content .profile_avatar img
+{
+  border-radius: $button_radius;
+}
+
+.task_list
+{
+  clear:left ;
+  float:left ;
+  width: 100% ;
+}
+
+.task_list .date
+{
+  color: $color_dark_grey ;
+  font-size: $font_size_small ;
+  font-family: $font-family-plain ;
+}
+
+.task_list_panel
+{
+  clear: left ;
+  margin-bottom: $spacing ;
+}
+
+.task_list_panel .task_tag
+{
+  float:left ;
+  font-family: $font-family-plain ;
+  font-size: $font_size_large ;
+  background-color: $color_mid_blue ;
+  color: $color_white ;
+  border-radius: $corner_radius ;
+  margin-right: $spacing ;
+  height: $button_height ;
+  min-width: $button_height ;
+  text-align: center ;
+  line-height: $button_height ;
+}
+
+.task_list_panel .task_tag.waiting
+{
+  font-size: 1em ;
+  background-color: $color_mid_grey ;
+}

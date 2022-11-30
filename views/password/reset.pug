@@ -1,0 +1,23 @@
+extends ../layout_plain
+
+block content
+
+   .form_panel
+      header
+         a(href="/")
+            img(class="logo", src="../img/logo.png", alt="")
+            img(class="logo_text", src="../img/logo_text_dark.png", alt="")
+      form(action='/password/reset',method='post')
+            .error
+               !=message
+            div
+                div(class=['fa','fa-user'])
+                input(id='password',type='text',name='password',placeholder='Password', autofocus)
+            div
+                div(class=['fa','fa-user'])
+                input(id='password_confirm',type='text',name='password_confirm',placeholder='Confirm Password')
+            br
+            input(id='_csrf',type='hidden',value=_csrf,name='_csrf')
+            input(id='token',type='hidden',value=token,name='token')
+            input(type='submit',value='Change Password')
+

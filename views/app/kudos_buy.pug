@@ -1,0 +1,18 @@
+extends shared/app_layout
+
+block content
+    h1 Get Kudos
+    p Kudos are a way to reward others and pay for Professional editing and proofing
+    .profile_detail
+    div
+        form(action='./buy',method='post')
+            input(id='_csrf',type='hidden',value=_csrf,name='_csrf')
+            input(id='level',type='hidden',value='basic',name='level')
+            input(id='type',type='hidden',value='paypal',name='type')
+            input(type='submit',class='right',value='Basic')
+    div
+        form(action='./kudos_buy',method='post')
+            p Value
+    div
+        form(action='./kudos_buy',method='post')
+            p Premium

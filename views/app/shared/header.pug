@@ -1,0 +1,25 @@
+header
+   nav
+      ul.menu-nav
+         li
+            a(href="/",class="logo") Biblatio
+         li
+            a(href="/app/tasks",class=context.path.toLowerCase().indexOf('tasks') !== -1 ? "active" : "") My Tasks
+         li
+            a(href="/app/tools",class=context.path.toLowerCase().indexOf('tools') !== -1 ? "active" : "") Tools
+      ul.user-nav
+         li
+            p #{context.user.username}
+             b &nbsp;(#{context.user.kudos})
+         li.user
+            img(class="user_avatar small",src="#{context.user.avatar}")
+            ul.user_sub_menu
+               li
+                  a(href="/app/profile") My Profile
+               li
+                  a(href="password") Change Password
+               li
+                  a(href="/app/logout") Logout
+
+
+

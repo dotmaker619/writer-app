@@ -1,0 +1,70 @@
+/* Colours */
+$color_light_green: #99D17D;
+$color_mid_green: #79B15D;
+$color_dark_green: #39811D;
+$color_light_blue: #7CBED0;
+$color_mid_blue: #7ABDD0;
+$color_light_grey: #EFEFEF;
+$color_mid_grey: #CFCFCF;
+$color_mid_dark_grey: #7F7F9F;
+$color_dark_grey: #5F5F7F;
+$color_trans_red: #ffb4ae;
+$color_trans_dark_red: #801800;
+$color_brown: #7E6252;
+$color_cream: #F4F1DA;
+$color_mid_cream: #ECECD4;
+$color_dark_cream: #DCDCC4;
+
+$color_link: #7ABDD0;
+$color_white: #fff;
+
+/* Dimension */
+$page_width: 1100px;
+$spacing: 12px;
+$spacing_small: 5px;
+$button_radius: 3px;
+$corner_radius: 4px;
+$header_height: 50px;
+$control_height: 25px;
+$button_height: 30px;
+$font_size_large: 20px;
+$font_size_normal: 14px;
+$font_size_small: 11px;
+
+
+/*  Fonts  */
+$font-family-plain: "Helvetica Neue",Helvetica,Arial,sans-serif;
+
+@font-face {
+  font-family: 'raleway-regular' ;
+  src: url('../fonts/raleway-regular.eot');
+  src: url('../fonts/raleway-regular.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/raleway-regular.woff') format('woff'),
+  url('../fonts/raleway-regular.ttf') format('truetype'),
+  url('../fonts/raleway-regular.svg#raleway-regular') format('svg');
+  font-weight: normal ;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'raleway-semibold' ;
+  src: url('../fonts/raleway-semibold.eot') ;
+  src: url('../fonts/raleway-semibold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/raleway-semibold.woff') format('woff'),
+  url('../fonts/raleway-semibold.ttf') format('truetype'),
+  url('../fonts/raleway-semibold.svg#raleway-semibold') format('svg');
+  font-weight: normal ;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'raleway-bold' ;
+  src: url('../fonts/raleway-bold.eot') ;
+  src: url('../fonts/raleway-bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/raleway-bold.woff') format('woff'),
+  url('../fonts/raleway-bold.ttf') format('truetype'),
+  url('../fonts/raleway-bold.svg#raleway-bold') format('svg');
+  font-weight: normal ;
+  font-style: normal;
+}
+

@@ -1,0 +1,218 @@
+doctype html
+html(lang='en')
+    head
+        title Biblatio
+        | &#x9;
+        meta(charset='utf-8')
+        | &#x9;
+        meta(name='description', content='Biblatio - Love Good Writing')
+        | &#x9;
+        link(rel='stylesheet', type='text/css', href='css/reset.css')
+        | &#x9;
+        link(rel='stylesheet', type='text/css', href='css/fancybox-thumbs.css')
+        | &#x9;
+        link(rel='stylesheet', type='text/css', href='css/fancybox-buttons.css')
+        | &#x9;
+        link(rel='stylesheet', type='text/css', href='css/fancybox.css')
+        | &#x9;
+        link(rel='stylesheet', type='text/css', href='css/animate.css')
+        | &#x9;
+        link(rel='stylesheet', type='text/css', href='css/main.css')
+        | &#x9;
+        link(rel='stylesheet', href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css')
+        // Favicon
+        link(rel='apple-touch-icon', sizes='57x57', href='/apple-touch-icon-57x57.png')
+        | &#x9;
+        link(rel='apple-touch-icon', sizes='60x60', href='/apple-touch-icon-60x60.png')
+        | &#x9;
+        link(rel='apple-touch-icon', sizes='72x72', href='/apple-touch-icon-72x72.png')
+        | &#x9;
+        link(rel='apple-touch-icon', sizes='76x76', href='/apple-touch-icon-76x76.png')
+        | &#x9;
+        link(rel='apple-touch-icon', sizes='114x114', href='/apple-touch-icon-114x114.png')
+        | &#x9;
+        link(rel='apple-touch-icon', sizes='120x120', href='/apple-touch-icon-120x120.png')
+        | &#x9;
+        link(rel='apple-touch-icon', sizes='144x144', href='/apple-touch-icon-144x144.png')
+        | &#x9;
+        link(rel='apple-touch-icon', sizes='152x152', href='/apple-touch-icon-152x152.png')
+        | &#x9;
+        link(rel='apple-touch-icon', sizes='180x180', href='/apple-touch-icon-180x180.png')
+        | &#x9;
+        link(rel='icon', type='image/png', href='/favicon-32x32.png', sizes='32x32')
+        | &#x9;
+        link(rel='icon', type='image/png', href='/favicon-194x194.png', sizes='194x194')
+        | &#x9;
+        link(rel='icon', type='image/png', href='/favicon-96x96.png', sizes='96x96')
+        | &#x9;
+        link(rel='icon', type='image/png', href='/android-chrome-192x192.png', sizes='192x192')
+        | &#x9;
+        link(rel='icon', type='image/png', href='/favicon-16x16.png', sizes='16x16')
+        | &#x9;
+        link(rel='manifest', href='/manifest.json')
+        | &#x9;
+        meta(name='msapplication-TileColor', content='#b19643')
+        | &#x9;
+        meta(name='msapplication-TileImage', content='/mstile-144x144.png')
+        | &#x9;
+        meta(name='theme-color', content='#ffffff')
+        | &#x9;
+        script(type='text/javascript', src='../js/jquery.js')
+        script(type='text/javascript', src='../js/fancybox.js')
+        script(type='text/javascript', src='../js/fancybox-buttons.js')
+        script(type='text/javascript', src='../js/fancybox-media.js')
+        script(type='text/javascript', src='../js/fancybox-thumbs.js')
+        script(type='text/javascript', src='../js/wow.js')
+        script(type='text/javascript', src='../js/main.js')
+    body
+        section.billboard.light
+            .tarp
+                header.wrapper.light
+                    a(href='#')
+                        img.logo(src='../img/logo.png', alt='')
+                    | &#x9;&#x9;&#x9;
+                    a(href='#')
+                        img.logo_text(src='../img/logo_text_light.png', alt='')
+                    | &#x9;&#x9;&#x9;
+                    nav
+                        ul
+                            if(loggedin)
+                                li
+                                    a.highlight(href='app') My Desk
+                            else
+                                li
+                                    a(href='login') Login
+                                | &#x9;&#x9;&#x9;&#x9;&#x9;
+                                li
+                                    a.highlight(href='join') Join
+                | &#x9;&#x9;
+                .caption.light.animated.wow.fadeInDown.clearfix
+                    h1 Love good writing.
+                    | &#x9;&#x9;&#x9;
+                    p
+                        | Join Biblatio and help discover the best writing online
+                        br
+                        | - one sentence at a time.
+                    | &#x9;&#x9;&#x9;
+                    hr
+                    | &#x9;&#x9;&#x9;
+                    p
+                    | &#x9;&#x9;&#x9;
+                    nav
+                        ul
+                            li
+                                a.editor.animated.wow.fadeIn(href='#editors', data-wow-delay='0.6s') I&apos;m an Editor
+                            | &#x9;&#x9;&#x9;&#x9;&#x9;
+                            li
+                                a.writer.animated.wow.fadeIn(href='#writers', data-wow-delay='0.75s') I&apos;m a Writer
+                | &#x9;&#x9;
+                .shadow
+        // End billboard
+        section.services.wrapper
+            ul.clearfix
+                li
+                    h2 Editing On-Demand
+                    | &#x9;&#x9;&#x9;&#x9;
+                    p
+                        | Introducing micro-editing - whether you&apos;re crafting a novel, writing an article, or simply want your social comments to look polished - get editing assistance as you write.
+                | &#x9;&#x9;&#x9;
+                li
+                    h2 Tools for Writers
+                    | &#x9;&#x9;&#x9;&#x9;
+                    p
+                        | Download our Writers&apos; Toolbox and get the tools to improve your writing style, vocabulary, and more.
+                | &#x9;&#x9;&#x9;
+                li
+                    h2 Community
+                    | &#x9;&#x9;&#x9;&#x9;
+                    p
+                        | Connect with friends in the Biblatio community, build reputation, and earn rewards.
+        // End services
+        section.user_type_title.editors
+            a#editors(href='#')
+            | &#x9;&#x9;
+            .wrapper
+                .title.animated.wow.fadeIn
+                    h2 For Editors
+                    | &#x9;&#x9;&#x9;&#x9;
+                    h3 what Biblatio offers you ...
+        section.user_type_section
+            .wrapper
+                ul.clearfix.wow.slideInLeft
+                    li
+                        p
+                            span.fa.fa-comments
+                            | Help writers by suggesting improvements (micro-editing)
+                    li
+                        p
+                            span.fa.fa-edit
+                            | Small tasks that fit in with (or augment) your other work
+                    li
+                        p
+                            span.fa.fa-clock-o
+                            | Tackle as few or as many editing tasks as you want during the day, whenever and wherever you like
+                    li
+                        p
+                            span.fa.fa-thumbs-up
+                            | Earn reputation and rewards from your contribution
+                    li
+                        p
+                            span.fa.fa-dollar
+                            | Exchange your accumulated editing Kudos for cash
+                .sidebar
+                    img(src='../img/icon2.png')
+                    a.editor(href='../join?editor=true') Join Now
+        section.user_type_title.writers
+            a#writers(href='#')
+            | &#x9;&#x9;
+            .wrapper
+                .title.animated.wow.fadeIn
+                    h2 For Writers
+                    | &#x9;&#x9;&#x9;&#x9;
+                    h3 what Biblatio offers you ...
+        // End editors
+        section.user_type_section
+            .wrapper
+                ul.clearfix.wow.slideInLeft
+                    li
+                        p
+                            span.fa.fa-comments
+                            | Get help with those tricky lines, as you write, from friends or professional editors
+                    li
+                        p
+                            span.fa.fa-edit
+                            | Small tasks that fit in with (or augment) your other work
+                    li
+                        p
+                            span.fa.fa-copyright
+                            | You keep the copyright (all rights) on any of your contributions
+                            b and
+                            |  any edits others make to your text
+                    li
+                        p
+                            span.fa.fa-thumbs-up
+                            | Earn reputation and rewards from your written gems
+                    li
+                        p
+                            span.fa.fa-dollar
+                            | Exchange your accumulated writing Kudos for cash
+                .sidebar
+                    img(src='../img/icon1.png')
+                    a.writer(href='../join?writer=true') Join Now
+        | &#x9;
+        footer
+            .wrapper
+                .rights
+                    p &copy; 2023 Biblatio
+                        | &#x9;&#x9;&#x9;[v
+                        = version
+                        | ]
+                nav
+                    ul
+                        li
+                            a(href='#') About
+                        | &#x9;&#x9;&#x9;&#x9;&#x9;
+                        li
+                            a(href='#') Contact
+        // End footer
+        script(src='../ga.js')

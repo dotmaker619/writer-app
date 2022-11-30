@@ -1,0 +1,45 @@
+extends ../layout_plain
+
+block content
+   .form_panel
+      header
+         a(href="/")
+            img(src="../img/logo.png", alt="")
+            img(src="../img/logo_text_dark.png", alt="")
+      form(action='/login',method='post')
+            div.error(class=_.isUndefined(message) ? "hidden" : "")
+               !=message
+
+            div
+                label(class='mdc-text-field mdc-text-field--filled mdc-text-field--with-leading-icon', data-mdc-auto-init='MDCTextField')
+                   span(class='mdc-text-field__ripple')
+                   i(class='material-icons mdc-text-field__icon mdc-text-field__icon--leading') person
+                   span(class='mdc-floating-label',id='username-label') Username
+                   input(class='mdc-text-field__input',type='text',aria-labelledby='username-label',id='username',
+                       value=username,name='username', autofocus)
+                   span(class='mdc-line-ripple')
+            br
+            div
+                label(class='mdc-text-field mdc-text-field--filled mdc-text-field--with-leading-icon', data-mdc-auto-init='MDCTextField')
+                   span(class='mdc-text-field__ripple')
+                   i(class='material-icons mdc-text-field__icon mdc-text-field__icon--leading') key
+                   span(class='mdc-floating-label',id='password-label') Password
+                   input(class='mdc-text-field__input',type='password',aria-labelledby='password-label',
+                       id='password',value='',name='password')
+                   span(class='mdc-line-ripple')
+            br
+            input(id='_csrf',type='hidden',value=_csrf,name='_csrf')
+            div
+                div(class='mdc-touch-target-wrapper')
+                 button(class='mdc-button mdc-button--touch mdc-button--raised',data-mdc-auto-init='MDCRipple')
+                    span(class='mdc-button__ripple')
+                    span(class='mdc-button__touch')
+                    span(class='mdc-button__label') Login
+
+            br
+      footer
+        a(href="password",class="left") Forgot Password?
+        a(href="join",class="right") Join Now
+      script
+          :babel
+              mdc.autoInit();

@@ -1,0 +1,28 @@
+extends ../layout_plain
+
+block content
+    h3 Join Biblatio
+    form(action='/join',method='post')
+        .form_panel
+            .error.hidden
+              !=message
+            fieldset
+                input(id='email',type='text',value=email,placeholder='Email Address',name='email', autofocus)
+            fieldset
+                input(id='firstname',type='text',value=firstname,placeholder='First Name',name='firstname')
+            fieldset
+                input(id='lastname',type='text',value=lastname,placeholder='Last Name',name='lastname')
+            fieldset
+                input(id='username',type='text',value=username,placeholder='Username',name='username')
+            fieldset
+                input(id='password',type='password',value='',placeholder='Password',name='password')
+            fieldset
+                input(id='password_confirm',type='password',value='',placeholder='Confirm Password',name='password_confirm')
+            fieldset
+                label(for='editor',class='hgap') I'm an Editor
+                    input(id='editor', type='checkbox', name='editor', checked=editor)
+                label(for='writer') I'm a Writer
+                    input(id='writer', type='checkbox', name='writer', checked=writer)
+            fieldset
+                input(id='_csrf',type='hidden',value=_csrf,name='_csrf')
+                input(type='submit',value='Sign Up')

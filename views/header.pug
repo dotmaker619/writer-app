@@ -1,0 +1,20 @@
+header(class=['wrapper'])
+   nav
+      ul.menu-nav
+         li
+            a(href="/")
+               img(class="logo", src="../img/logo.png", alt="")
+         li
+            a(href="/") My Tasks
+      ul.user-nav
+         li
+            a(href="account") #{user.username}
+               b &nbsp; (#{user.kudos})
+         li.user_avatar
+            img(src="https://secure.gravatar.com/avatar/72311d281d303485c9ead13de32b104f?s=64")
+            ul.user_sub_menu
+               li
+                  a(href="logout") Logout
+
+
+

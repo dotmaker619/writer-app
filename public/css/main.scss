@@ -1,0 +1,637 @@
+@import "common";
+
+body
+{
+    background: #fff ;
+    text-rendering: optimizelegibility ;
+    text-align: center ;
+}
+
+.wrapper
+{
+    max-width: $page_width ;
+    margin: 0 auto ;
+    padding-left: 16px ;
+    padding-right: 30px;
+}
+
+h1, h2, h3, h4, h5 ,h6
+{
+    color: #626262 ;
+    font-family: "raleway-regular", arial ;
+    letter-spacing: 1px;
+}
+
+h1
+{ font-size: 2em ; margin: .67em 0 }
+h2
+{ font-size: 1.5em ; margin: .75em 0 }
+h3
+{ font-size: 1.17em ; margin: .83em 0 }
+h5
+{ font-size: .83em ; margin: 1.5em 0 }
+h6
+{ font-size: .75em ; margin: 1.67em 0 }
+h1, h2, h3, h4,
+h5, h6
+{ font-weight: bolder }
+
+a
+{ font-family: "raleway-regular", arial ;
+  font-size: 0.7em ;
+  text-decoration: none;
+}
+
+a:hover
+{
+  text-decoration: underline ;
+}
+
+
+.clearfix:before,  
+.clearfix:after {  
+    content: " " ;
+    display: table;  
+}  
+.clearfix:after
+{
+    clear: both;  
+}  
+ 
+.clearfix
+{
+    *zoom: 1;  
+}
+
+
+
+/* Form Controls */
+/*
+input
+{
+    display: inline-block ;
+    font-family: "raleway-regular", arial ;
+    padding: 5px 8px 5px 8px ;
+    border: 1px solid $color_mid_grey ;
+}
+
+input:focus, select:focus
+{
+    border: 1px solid $color_light_blue ;
+}
+
+input[type="text"], input[type="password"]{
+    background-color: transparent ;
+    font-size: 1em ;
+}
+*/
+
+input[type="submit"]{
+    border: none ;
+    background-color: $color_light_green ;
+    text-decoration: none ;
+    font-family: "raleway-bold" ;
+    letter-spacing: 0.04em ;
+    font-size: 18px ;
+    font-weight: bold ;
+    text-align: center ;
+    min-width: 180px ;
+    height: $control_height ;
+    vertical-align: middle ;
+    border-radius: $button_radius ;
+    cursor: pointer;
+}
+
+fieldset
+{
+    border: none;
+}
+
+/*
+label
+{
+    line-height: normal ;
+    font-family: "raleway-regular", arial ;
+}
+
+ */
+
+
+/*    Billboard    */
+.billboard
+{
+    width: 100% ;
+    height: 742px ;
+    position: relative ;
+}
+
+.billboard.light
+{
+    background: url('../img/billboard.jpg') no-repeat ;
+    background-size: cover ;
+    background-position: bottom ;
+    -webkit-background-size: cover ;
+    -moz-background-size: cover ;
+    -o-background-size: cover ;
+}
+
+.billboard .tarp
+{
+    background-color: rgba(0, 0, 0, 0.425) ;
+        bottom: 0 ;
+        left: 0 ;
+        position: absolute ;
+        right: 0 ;
+    top: 0;
+}
+
+.billboard .caption nav
+{
+    width:420px ;
+    margin-left: auto ;
+    margin-right: auto ;
+    margin-top: 55px;
+}
+
+
+.billboard .caption nav ul li
+{
+    list-style: none ;
+    display: inline-block ;
+    float: left ;
+    margin-left: 22px;
+}
+
+.billboard .caption nav ul li a
+{
+    text-decoration: none ;
+    font-family: "raleway-bold" ;
+    letter-spacing: 0.04em ;
+    font-size: 18px ;
+    font-weight: bold ;
+    text-align: center ;
+    display: table-cell ;
+    width: 180px ;
+    height: 55px ;
+    vertical-align: middle ;
+    border-radius: 10px ;
+}
+
+a.editor
+{
+    background-color: $color_light_blue ;
+}
+
+.billboard .caption nav ul li a:hover
+{
+    background-color: #B9B9B9;
+}
+
+a.writer
+{
+    background-color: $color_light_green;
+}
+
+.billboard .shadow
+{
+    position: absolute ;
+    width: 100% ;
+    height: 142px ;
+    bottom: 0 ;
+    left: 0 ;
+    margin-bottom: -1px ;
+    background: url('../img/shadow.png') repeat-x ;
+}
+
+.billboard .caption
+{
+    margin-top: 0px ;
+    text-align: center ;
+    width:45% ;
+    margin-left: 10% ;
+    padding:20px ;
+    -moz-border-radius: 10px ;
+    border-radius: 10px ;
+}
+
+.billboard .caption.light
+{
+    color: #FBD9C6;
+}
+
+.billboard .caption.dark
+{
+    color: #5d5d5d;
+}
+
+.billboard .caption h1
+{
+    font-family: "raleway-bold" ;
+    font-size: 50px ;
+    font-weight: bold ;
+    margin-bottom: 30px ;
+}
+
+.billboard .caption.light h1
+{
+    color: #FBD9C6;
+}
+
+.billboard .caption.dark h1
+{
+    color: #5d5d5d;
+}
+
+.billboard .caption p
+{
+    font-family: "raleway-regular" ;
+    font-size: 18px ;
+    margin-bottom: 30px ;
+}
+
+.billboard .caption.light p
+{
+    color: #FBD9C6 ;
+}
+
+.billboard .caption.dark p
+{
+    color: #5d5d5d;
+}
+
+.billboard .caption hr
+{
+    display: inline-block ;
+    height: 1px ;
+    width: 30px ;
+    border: 0!important ;
+    margin: 0 ;
+    padding: 0 ;
+}
+
+.billboard .caption.light hr
+{
+    background: #FBD9C6 ;
+}
+
+.billboard .caption.dark hr
+{
+    background: #5d5d5d;
+}
+
+/*    header    */
+header
+{
+    width: 100% ;
+    height: 100px ;
+}
+
+header .logo
+{
+    float: left ;
+    margin-top: 20px ;
+    margin-right: 12px ;
+}
+
+header .logo_text
+{
+    float: left ;
+    margin-top: 18px ;
+}
+
+header nav
+{
+    float: right ;
+    margin-top: 23px ;
+    margin-right: 35px ;
+}
+
+
+header nav ul li
+{
+    list-style: none ;
+    display: block ;
+    float: left ;
+    margin-left: 25px ;
+}
+
+header nav ul li a
+{
+    text-decoration: none ;
+    font-family: "raleway-regular" ;
+    font-size: 14px ;
+    transition:all .2s linear ;
+    padding: 0.6em 1.1em 0.6em 1.1em ;
+    -webkit-transition:all .2s linear ;
+    -moz-transition:all .2s linear ;
+    -o-transition:all .2s linear ;
+}
+
+header nav ul li a:hover
+{
+  text-decoration: none ;
+}
+
+header nav .highlight
+{
+  border: 1px solid rgba(255, 255, 255, 0.6) ;
+  border-radius: 6px ;
+}
+
+header.light nav ul li a
+{
+    color: #fff;
+}
+
+header.light nav ul li a:hover
+{
+    color: #B9B9B9;
+}
+
+header.dark nav ul li a
+{
+    color: #5d5d5d;
+}
+
+header.dark nav ul li a:hover
+{
+    color: #919191;
+}
+
+/*    Services    */
+.services ul
+{
+}
+
+.services.wrapper
+{
+    width: $page_width;
+}
+
+.services ul li
+{
+    list-style: none ;
+    display: block ;
+    max-width: 313px ;
+    float: left ;
+    margin-left: 80px ;
+    text-align: center ;
+}
+
+.services ul li:first-child
+{
+    margin-left: 0 ;
+}
+
+.services ul li h2
+{
+    color: #616161 ;
+    font-family: "raleway-bold" ;
+    font-size: 18px ;
+    font-weight: bold ;
+    margin: 0;
+}
+
+.services ul li p
+{
+   color: #838181 ;
+    font-family: "raleway-regular" ;
+    font-size: 14px ;
+    line-height: 28px ;
+    margin-top: 40px ;
+    letter-spacing: .5px ;
+}
+
+.title
+{
+    text-align: center ;
+    overflow: hidden ;
+}
+
+.title h2
+{
+    color: #616161 ;
+    font-family: "raleway-bold" ;
+    font-size: 30px ;
+    font-weight: bold ;
+    margin: 0 0 20px 0 ;
+    //text-transform: uppercase ;
+}
+
+.title h3
+{
+    color: #9b9b9b ;
+    font-family: "raleway-regular" ;
+    font-size: 14px ;
+    margin: 0 0 20px 0 ;
+    font-weight: normal!important ;
+}
+
+.title hr.separator
+{
+    display: block ;
+    width: 40px ;
+    height: 1px ;
+    background-color: #ebebeb ;
+    margin: 0 auto ;
+    padding: 0 ;
+    border: 0!important ;
+}
+
+/*  user_type_section    */
+.user_type_title
+{
+  width: 100% ;
+  height: 350px ;
+  margin-top: 70px ;
+}
+
+.user_type_title.editors
+{
+    background: url('../img/banner_editor.jpg') no-repeat ;
+    background-position: center ;
+  background-size: cover ;
+  -webkit-background-size: cover ;
+  -moz-background-size: cover ;
+  -o-background-size: cover ;
+}
+
+.user_type_title.writers
+{
+   background: url('../img/banner_writer.jpg') no-repeat ;
+  background-position: bottom ;
+  background-size: cover ;
+  -webkit-background-size: cover ;
+  -moz-background-size: cover ;
+  -o-background-size: cover ;
+}
+
+.user_type_section
+{
+  margin-top: 40px;
+}
+
+.user_type_section ul
+{
+    width:50% ;
+    float:left ;
+    margin-top: 50px ;
+    list-style: none ;
+  text-align: left ;
+}
+
+.user_type_section ul li
+{
+    display: block ;
+    margin-left: 80px ;
+    margin-bottom: 12px ;
+    /*width: 313px;*/
+}
+
+.user_type_section ul li .quotes
+{
+    margin-right: 10px ;
+}
+
+.user_type_section ul li p
+{
+    color: #838181 ;
+    font-family: "raleway-regular" ;
+    font-size: 16px ;
+    line-height: 23px ;
+    letter-spacing: .5px ;
+    text-indent: -15px ;
+}
+
+.user_type_section .fa
+{
+    min-width:15px ;
+}
+
+.user_type_section .sidebar
+{
+    width:35% ;
+    height:100% ;
+    display: block ;
+    float: right ;
+    margin: 50px ;
+    text-align: center ;
+    vertical-align: middle ;
+}
+
+.user_type_section .sidebar img
+{
+    display: inline-block ;
+    text-align: center ;
+    vertical-align: middle ;
+  margin-bottom: 35px ;
+}
+
+.user_type_section .sidebar a
+{
+  border-radius: 10px ;
+  display: inline-block ;
+  font-family: "raleway-bold" ;
+  font-size: 18px ;
+  font-weight: bold ;
+  height: 40px ;
+  letter-spacing: 0.04em ;
+  padding-top: 25px ;
+  text-align: center ;
+  text-decoration: none ;
+  vertical-align: middle ;
+  width: 100% ;
+}
+
+
+.user_type_section .wrapper
+{
+    width:100% ;
+    display: inline-block ;
+}
+
+.user_type_title.editors .title h2
+{
+    color: #fff ;
+}
+
+.user_type_title.editors .title h3
+{
+    color: #fff;
+}
+
+.user_type_title.editors .title
+{
+    padding-top:60px ;
+    padding-left:-35px ;
+}
+
+.user_type_title.writers .title
+{
+  padding-top: 185px ;
+  padding-left: 75px ;
+}
+
+
+/*    footer    */
+footer
+{
+    padding: 35px 0 ;
+    overflow: hidden ;
+    margin-top: 50px ;
+}
+
+footer .footer_logo
+{
+    float: left ;
+}
+
+footer .rights p
+{
+    float: left ;
+    color: #838181 ;
+    font-family: "raleway-regular" ;
+    font-size: 13px ;
+    margin: 5px 0 0 12px ;
+}
+
+footer .rights p a
+{
+    color: #777 ;
+    font-family: "raleway-semibold" ;
+    font-size: 13px ;
+    font-weight: bold ;
+    text-decoration: none ;
+}
+
+footer nav ul
+{
+    float: right ;
+    overflow: hidden ;
+    list-style: none ;
+    margin-top: 5px ;
+}
+
+footer nav ul li
+{
+    float: left ;
+    margin-left: 25px ;
+}
+
+footer nav ul li a
+{
+    color: #838181 ;
+    font-family: "raleway-regular" ;
+    font-size: 13px ;
+    text-decoration: none ;
+
+    transition:all .2s linear ;
+    -webkit-transition:all .2s linear ;
+    -moz-transition:all .2s linear ;
+    -o-transition:all .2s linear ;
+}
+
+footer nav ul li a:hover
+{
+    color: #616161;
+}
